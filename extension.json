@@ -1,0 +1,8 @@
+{
+    "id": "sortable-procedure",
+    "name": "Sortable Procedure",
+    "srcdoc": "./build/index.html",
+    "fieldTypes": [
+        "Object"
+    ]
+}

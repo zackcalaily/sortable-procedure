@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('./fonts/avenir-regular-normal.woff2') format('woff2'),
+         url('./fonts/avenir-regular-normal.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('./fonts/avenir-medium-normal.woff2') format('woff2'),
+         url('./fonts/avenir-medium-normal.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Avenir Next', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    overflow: none;
 }
