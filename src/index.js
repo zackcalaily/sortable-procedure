@@ -27,17 +27,23 @@ class SortableProcedure extends React.Component {
         super(props);
 
         this.state = {
-            procedure: props.sdk.field.getValue() || {
-                activities: {},
-                activityOrder: [],
-                steps: {},
-            },
+            procedure: props.sdk.field.getValue() || this.initialProcedureState(),
             increment: {
                 step: 1,
                 min: 1,
                 max: 3,
             }
         };
+
+        console.log(this.state);
+    }
+
+    initialProcedureState = () => {
+        return {
+            activities: {},
+            activityOrder: [],
+            steps: {},
+        };   
     }
 
     onIncrementStepChange = (event) => {
@@ -177,8 +183,8 @@ class SortableProcedure extends React.Component {
         }
     }
 
-    onExternalChange = (value) => {
-        this.setState({ procedure: value });
+    onExternalChangeHandler = (value) => {
+        this.setState({ procedure: value || this.initialProcedureState() });
     }
 
     onDragStart = () => {
@@ -324,7 +330,7 @@ class SortableProcedure extends React.Component {
         this.props.sdk.window.startAutoResizer();
 
         // Handler for external field value changes (e.g. when multiple authors are working on the same entry)
-        this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange);
+        this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChangeHandler);
     }
 
     render() {
